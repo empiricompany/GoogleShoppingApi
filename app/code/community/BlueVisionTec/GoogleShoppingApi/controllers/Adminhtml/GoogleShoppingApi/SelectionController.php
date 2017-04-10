@@ -44,4 +44,9 @@ class BlueVisionTec_GoogleShoppingApi_Adminhtml_GoogleShoppingApi_SelectionContr
                 ->toHtml()
            );
     }
+    
+    protected function _isAllowed()
+    {
+        return Mage::getSingleton('admin/session')->isAllowed('catalog/googleshoppingapi/items');
+    }
 }
